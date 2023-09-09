@@ -1,0 +1,21 @@
+#include<stdio.h> 
+int main()
+{
+ int n,i,a[10],Even_Count = 0,Odd_Count = 0;
+ printf("Enter the n of an Array :  ");
+ scanf("%d",&n); 
+ printf("Enter the Array Elements\n");
+ for(i = 0; i < n; i++)
+   scanf("%d", &a[i]);
+ for(i = 0; i < n; i ++)
+   if(a[i] % 2 == 0) {
+     Even_Count++;
+   }
+   else
+   {
+     Odd_Count++;
+   }
+ printf("\n Total Number of Even Numbers in Array = %d ", Even_Count);
+ printf("\n Total Number of Odd Numbers in Array = %d ", Odd_Count);
+ return 0;
+ }
