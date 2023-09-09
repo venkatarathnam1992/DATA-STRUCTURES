@@ -1,0 +1,103 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<malloc.h>
+#include<string.h>
+struct node
+{
+	int data;
+	struct node*next;
+}*head=NULL,*p,*t,*newnode;
+void create()
+{int n,i,ele;
+printf("enter n");
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{
+	printf("enter element");
+	scanf("%d",&ele);
+	newnode=(struct node*)malloc(sizeof(struct node));
+	newnode->data=ele;
+	newnode->next=NULL;
+	if(head==NULL)
+	{head=newnode;
+	p=newnode;
+	}
+	else
+	{
+		for(p=head;p->next!=NULL;p=p->next);
+		p->next=newnode;
+		p=newnode;
+	}
+}
+}
+void display()
+{if(head==NULL)
+printf("the SLL is empty");
+else
+for(p=head;p!=NULL;p=p->next)
+printf("%d->",p->data);
+}
+void even_odd()
+{ 
+    int oc=0,ec=0;
+	for(p=head;p->next!=NULL;p=p->next)
+	{
+		if(p->data%2==0)
+		ec++;
+		else
+		oc++;
+	}
+	printf("The odd count = %d\n",oc);
+	printf("The even count = %d",ec);
+}
+void ins_begin()
+{
+	int ele;
+	printf("enter the element: ");
+	scanf("%d",&ele);
+	newnode=(struct node*)malloc(sizeof(struct node));
+	newnode->data=ele;
+	newnode->next=NULL;
+	p=head;
+	head=newnode;
+	newnode->next=p;
+	p=head;	
+}
+void ins_end()
+{
+	int ele;
+	printf("enter the element: ");
+	scanf("%d",&ele);
+	newnode=(struct node*)malloc(sizeof(struct node));
+	newnode->data=ele;
+	newnode->next=NULL;
+	for(p=head;p->next!=NULL;p=p->next);
+		p->next=newnode;
+		p=newnode;	
+}
+int main()
+{int cho;
+do
+{
+	printf("\n main menu");
+	printf("\n 1.create");
+	printf("\n 2.display");
+	printf("\n 3.even_odd");
+	printf("\n 4.ins_begin");
+	printf("\n 5.ins_end");
+	printf("\n enter the choice");
+	scanf("%d",&cho);
+	switch (cho)
+	{
+		
+		case 1:create();break;
+		case 2:display();break;
+		case 3:even_odd();break;
+		case 4:ins_begin();break;
+		case 5:ins_end();break;
+		case 6:exit(0);break;
+	}	
+}
+while(cho>=1&&cho<=6);
+return 0;
+}
