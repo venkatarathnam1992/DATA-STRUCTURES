@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+	int A[10][10],B[10][10],C[10][10],i,j,k,l,m,n;
+	printf("enter l,m,n:\n");
+	scanf("%d %d %d",&l,&m,&n);
+	
+	printf("enter the matrix-A:\n");
+	for(i=0;i<l;i++){
+	for(j=0;j<m;j++){
+	scanf("%d",&A[i][j]);
+}
+}
+	printf("enter the matrix-B:\n");
+	for(j=0;j<m;j++)
+	for(k=0;k<n;k++)
+	scanf("%d",&B[j][k]);
+	
+	for(i=0;i<l;i++){
+	for(k=0;k<n;k++){
+	C[i][k]=0;
+	for(j=0;j<m;j++){
+	C[i][k]+=A[i][j]*B[j][k];	
+	}
+	}
+	}
+	printf("the output of C-matrix \n");
+	for(i=0;i<l;i++)
+	{
+	for(k=0;k<n;k++){
+	printf("%d\t",C[i][k]);
+    }
+	printf("\n");
+  }
+		return 0;
+}
